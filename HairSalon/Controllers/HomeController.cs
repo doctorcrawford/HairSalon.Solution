@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using HairSalon.Models;
 using System.Collections.Generic;
@@ -23,7 +21,6 @@ namespace HairSalon.Controllers
     }
     public ActionResult Search()
     {
-      // ViewBag.Name = new SelectList(Stylist.Name, "Value", "Value");
       return View();
     }
 
