@@ -42,28 +42,28 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    // public ActionResult Details(int id)
-    // {
-    //   // Item thisItem = _db.Items
-    //   //                     .Include(item => item.Category)
-    //   //                     .FirstOrDefault(item => item.ItemId == id);
-    //   return View(thisItem);
-    // }
+    public ActionResult Details(int id)
+    {
+      Client thisClient = _db.Clients
+                          .Include(client => client.Stylist)
+                          .FirstOrDefault(client => client.ClientId == id);
+      return View(thisClient);
+    }
 
-    // public ActionResult Edit(int id)
-    // {
-    //   // Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-    //   // ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-    //   return View(thisItem);
-    // }
+    public ActionResult Edit(int id)
+    {
+      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+      return View(thisClient);
+    }
 
-    // [HttpPost]
-    // public ActionResult Edit(Item item)
-    // {
-    //   // _db.Items.Update(item);
-    //   // _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Edit(Client client)
+    {
+      _db.Clients.Update(client);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
     // public ActionResult Delete(int id)
     // {
