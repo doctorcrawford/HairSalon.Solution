@@ -25,9 +25,10 @@ DROP TABLE IF EXISTS `Clients`;
 CREATE TABLE `Clients` (
   `ClientId` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) NOT NULL,
+  `Haircut` varchar(255) NOT NULL,
   `StylistId` int NOT NULL,
   PRIMARY KEY (`ClientId`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,8 +41,9 @@ DROP TABLE IF EXISTS `Stylists`;
 CREATE TABLE `Stylists` (
   `StylistId` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) NOT NULL,
+  `Specialty` varchar(255) NOT NULL,
   PRIMARY KEY (`StylistId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +55,4 @@ CREATE TABLE `Stylists` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-19 14:58:45
+-- Dump completed on 2023-05-19 15:25:07
