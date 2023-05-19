@@ -17,11 +17,14 @@
 
   @Html.LabelFor(model => model.Haircut)
   @Html.EditorFor(model => model.Haircut)
-  
+
 
   @Html.LabelFor(model => model.Stylist)
   @Html.DropDownList("StylistId")
 
   <input type="submit" value="Save" />
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>
+
+<div class="basic">
+  <p>@Html.ActionLink("Back to list", "Index")</p>
+</div>
