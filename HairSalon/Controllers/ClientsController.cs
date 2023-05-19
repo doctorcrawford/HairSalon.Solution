@@ -24,23 +24,23 @@ namespace HairSalon.Controllers
       return View(model);
     }
 
-    // public ActionResult Create()
-    // {
-    //   // ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-    //   return View();
-    // }
+    public ActionResult Create()
+    {
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+      return View();
+    }
 
-    // [HttpPost]
-    // public ActionResult Create(Item item)
-    // {
-    //   // if (item.CategoryId == 0)
-    //   // {
-    //   //   return RedirectToAction("Create");
-    //   // }
-    //   // _db.Items.Add(item);
-    //   // _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Create(Client client)
+    {
+      if (client.ClientId == 0)
+      {
+        return RedirectToAction("Create");
+      }
+      _db.Clients.Add(client);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
     // public ActionResult Details(int id)
     // {
