@@ -25,7 +25,7 @@ Install the tools that are introduced in [this series of lessons on LearnHowToPr
 
 ### Set up the Databases
 
-Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://www.learnhowtoprogram.com/lessons/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) to use the `kyle_crawford.sql` file located at the top level of this repo to create a new database in MySQL Workbench with the name `kyle_crawford`.
+Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://www.learnhowtoprogram.com/c-and-net/database-basics/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) to use the `kyle_crawford.sql` file located at the top level of this repo to create a new database in MySQL Workbench with the name `kyle_crawford`.
 
 ### Set Up and Run Project
 
