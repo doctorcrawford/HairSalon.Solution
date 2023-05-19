@@ -21,6 +21,11 @@ namespace HairSalon.Controllers
       return View(model);
     }
 
+    public ActionResult Result(List<Stylist> result)
+    {
+      return View(result);
+    }
+
     public ActionResult Create()
     {
       return View();
