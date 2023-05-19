@@ -31,8 +31,9 @@ namespace HairSalon.Controllers
     public ActionResult Search(Stylist stylistSearch)
     {
       List<Stylist> results = _db.Stylists
-        .Where(stylist => stylist.Name.Contains(stylistSearch.Name)).ToList();
-      return RedirectToAction("Results", "Stylists", results);
+        .Where(stylist => stylist.Name.Contains(stylistSearch.Name))
+        .ToList();
+      return View("Results", results);
     }
 
     public ActionResult Results(List<Stylist> result)
