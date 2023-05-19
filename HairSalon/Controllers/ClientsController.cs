@@ -33,10 +33,10 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Create(Client client)
     {
-      // if (client.StylistId == 0)
-      // {
-      //   return RedirectToAction("Create");
-      // }
+      if (client.StylistId == 0)
+      {
+        return RedirectToAction("Create");
+      }
       _db.Clients.Add(client);
       _db.SaveChanges();
       return RedirectToAction("Index");
@@ -65,19 +65,19 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    // public ActionResult Delete(int id)
-    // {
-    //   // Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-    //   return View(thisItem);
-    // }
+    public ActionResult Delete(int id)
+    {
+      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      return View(thisClient);
+    }
 
-    // [HttpPost, ActionName("Delete")]
-    // public ActionResult DeleteConfirmed(int id)
-    // {
-    //   // Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-    //   // _db.Items.Remove(thisItem);
-    //   // _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      _db.Clients.Remove(thisClient);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
