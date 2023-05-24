@@ -25,12 +25,12 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost]
-    public ActionResult Search(Stylist stylistSearch)
+    public ActionResult SearchStylists(Stylist stylistSearch)
     {
       List<Stylist> results = _db.Stylists
         .Where(stylist => stylist.Name.Contains(stylistSearch.Name))
         .ToList();
-      return View("Results", results);
+      return View("ResultsStylists", results);
     }
 
     public ActionResult Results(List<Stylist> result)
