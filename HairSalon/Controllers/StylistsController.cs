@@ -34,6 +34,10 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Create(Stylist stylist)
     {
+      if (stylist.Name == null || stylist.Specialty == null)
+      {
+        return RedirectToAction("Create");
+      }
       _db.Stylists.Add(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
