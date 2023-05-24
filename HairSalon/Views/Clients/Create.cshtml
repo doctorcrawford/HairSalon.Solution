@@ -6,7 +6,8 @@
 
 @if (@ViewBag.StylistList.Count == 0)
 {
-  <p>You must first add a stylist before adding clients!</p>
+  <p class="warning">You must first add a stylist before adding clients!</p>
+  <p>@Html.ActionLink("Add a stylist", "Create", "Stylists")</p>
 }
 
 <h4>Add a new client</h4>
