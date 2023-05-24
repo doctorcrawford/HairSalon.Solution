@@ -60,6 +60,10 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Edit(Stylist stylist)
     {
+      if (stylist.Name == null || stylist.Specialty == null)
+      {
+        return RedirectToAction("Edit");
+      }
       _db.Stylists.Update(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
