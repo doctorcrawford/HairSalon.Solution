@@ -4,24 +4,28 @@
 
 @model HairSalon.Models.Client
 
+<h4>Add a new client</h4>
+
 @if (@ViewBag.StylistList.Count == 0)
 {
   <p class="warning">You must first add a stylist before adding clients!</p>
   <p>@Html.ActionLink("Add a stylist", "Create", "Stylists")</p>
 }
-
-<h4>Add a new client</h4>
-@using (Html.BeginForm())
+else
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
 
-  @Html.LabelFor(model => model.Haircut)
-  @Html.TextBoxFor(model => model.Haircut)
+    @Html.LabelFor(model => model.Haircut)
+    @Html.TextBoxFor(model => model.Haircut)
 
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
-  <input type="submit" value="Add new client" />
+    @Html.LabelFor(model => model.Stylist)
+    @Html.DropDownList("StylistId")
+    <input type="submit" value="Add new client" />
+  }
+
 }
 
 <div class="basic">
